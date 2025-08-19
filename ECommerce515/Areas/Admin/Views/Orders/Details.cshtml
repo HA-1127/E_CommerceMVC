@@ -1,0 +1,26 @@
+﻿@model Order
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Order Details</h2>
+
+<div class="card">
+    <div class="card-body">
+        <p><strong>Full Name :</strong> @(Model.ApplicationUser.FirstName+ " "+Model.ApplicationUser.LastName)</p>
+        <p><strong>User Name :</strong> @Model.ApplicationUser.UserName</p>
+
+        <p><strong>Date :</strong> @Model.DateTime</p>
+        <p><strong>Pay ment:</strong> @Model.PaymentMethod</p>
+        <p><strong>Status:</strong> @Model.OrderStatus</p>
+        <p><strong>Total Price:</strong> @Model.TotalPrice</p>
+
+
+        <a href="/Admin/Orders/Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
+
+
+
+
+

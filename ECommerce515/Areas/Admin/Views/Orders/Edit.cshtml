@@ -1,0 +1,55 @@
+﻿@model OrdrsOrUserVM
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+    <h1>Edit Order</h1>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Edit" asp-controller="Orders" method="post">
+                <input type="hidden" name="orders.Id" value="@Model.orders!.Id" />
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="orders.ApplicationUserId" class="control-label"></label>
+                    <select asp-for="orders.ApplicationUserId" asp-items="Model.applicationUsers" class="form-control"></select>
+
+                    <span asp-validation-for="orders.ApplicationUserId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="orders.DateTime" class="control-label"></label>
+                    <input asp-for="orders.DateTime" class="form-control" />
+                    <span asp-validation-for="orders.DateTime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="orders.OrderStatus" class="control-label"></label>
+                    <select asp-for="orders.OrderStatus" asp-items="Html.GetEnumSelectList<OrderStatus>()" class="form-control"></select>
+                    <span asp-validation-for="orders.OrderStatus" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="orders.PaymentMethod" class="control-label"></label>
+                    <select asp-for="orders.PaymentMethod" asp-items="Html.GetEnumSelectList<PaymentMethod>()" class="form-control"></select>
+                    <span asp-validation-for="orders.PaymentMethod" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="orders.TotalPrice" class="control-label"></label>
+                    <input asp-for="orders.TotalPrice" class="form-control" />
+                    <span asp-validation-for="orders.TotalPrice" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mt-3">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+
+</div>
