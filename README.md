@@ -13,9 +13,10 @@ The E-Commerce Application is a comprehensive platform designed to manage the en
 - **Multiple Addresses:** Support for multiple billing and shipping addresses per customer.
 - **Data Integrity & Security:** Validation rules and unique constraints (e.g., email) ensure accurate and secure data.
 
-### Product and Category Management
+### Product and Category and brand and order Management
 - **Category Management:** Create, read, update, and delete product categories. Each category can include multiple products.
 - **Product Management:** CRUD operations for products, stock management, discounts, and image handling.
+ - **brand Management:** CRUD operations for products, stock management, discounts, and image handling.
 
 ### Shopping Cart
 - **Add to Cart:** Add products to the cart from product listings or detail pages.
